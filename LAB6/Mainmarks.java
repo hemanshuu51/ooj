@@ -21,8 +21,8 @@ public class Mainmarks {
             e.getextmarks();
             e.displayextmarks();
             e.totalmarks();
-            System.out.println("HITESH SHARMA");
-            System.out.println("1BM23CS114");
+            System.out.println("HEMANSHUU DHIMAN);
+            System.out.println("1BM23CS109");
         }
     }
 }
