@@ -1,0 +1,81 @@
+import java.util.*;
+class Student
+{
+    int grade,sum=0,csum=0;
+    int credits[]=new int[8];
+    int marks[]=new int[8];
+    String name,USN;
+    float sgpa;
+
+    void read()
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter the name of the Student : ");
+        name=sc.nextLine();
+        System.out.print("\nEnter the USN of the Student : ");
+        USN=sc.next();
+        System.out.print("\nEnter the marks of the subjects : ");
+        for(int i=0;i<8;i++)
+            marks[i]=sc.nextInt();
+        System.out.print("\nEnter the credits of the subjects : ");
+        for(int i=0;i<8;i++)
+            credits[i]=sc.nextInt();
+    }
+
+    void display()
+    {
+        System.out.println("\nName of the Student : "+name);
+        System.out.println("\nUSN of the Student : "+USN);
+        System.out.println("\nMarks of the subjects : ");
+        for(int i=0;i<8;i++)
+            System.out.print(marks[i]+" ");
+        System.out.println("\nCredits of the subjects : ");
+        for(int i=0;i<8;i++)
+            System.out.print(credits[i]+" ");
+        System.out.println("\nThe SGPA of the student : "+sgpa);
+    }
+
+    void calculate()
+    {
+        for(int i=0;i<8;i++)
+        {
+            if(marks[i]>100)
+            {
+                System.out.println("Invalid Marks");
+                break;
+            }
+            else if(marks[i]>=90)
+                grade=10;
+            else if(marks[i]>=80 && marks[i]<90)
+                grade=9;
+            else if(marks[i]>=70 && marks[i]<80)
+                grade=8;
+            else if(marks[i]>=60 && marks[i]<70)
+                grade=7;
+            else if(marks[i]>=50 && marks[i]<60)
+                grade=6;
+            else if(marks[i]>=40 && marks[i]<50)
+                grade=5;
+            else
+                {
+                    System.out.println("You are failed !!");
+                    break;
+                }
+            sum+=grade*credits[i];
+            csum+=credits[i];
+        }
+        sgpa=(float)sum/csum;
+    }
+
+    public static void main(String args[])
+    {
+        Student obj=new Student();
+        obj.read();
+        obj.calculate();
+        obj.display();
+
+        System.out.println("HEMANSHU DHIMAN");
+        System.out.println("1BM23CS114");
+    }
+
+}
